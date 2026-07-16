@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Aagaaz</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-layout">
+
+        <section class="auth-showcase register-showcase">
+
+            <a class="auth-brand" href="../index.html">
+                <span class="brand-icon">♻</span>
+                <span>Aagaaz</span>
+            </a>
+
+
+            <div class="showcase-content">
+
+                <span class="auth-badge">
+                    JOIN Aagaaz
+                </span>
+
+                <h1>
+                    Take action.
+                    <span>Create impact.</span>
+                    Build a cleaner future.
+                </h1>
+
+                <p>
+                    Create your account to access AI predictions,
+                    find cleanup work opportunities and track
+                    your environmental contribution.
+                </p>
+
+
+                <div class="showcase-points">
+
+                    <article>
+                        <strong>AI</strong>
+                        <span>Intelligent Waste Planning</span>
+                    </article>
+
+                    <article>
+                        <strong>24h</strong>
+                        <span>Cleanup Submission Workflow</span>
+                    </article>
+
+                    <article>
+                        <strong>∞</strong>
+                        <span>Scalable Environmental Impact</span>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="auth-form-section">
+
+            <div class="auth-card">
+
+                <a class="mobile-auth-brand" href="../index.html">
+                    ♻ Aagaaz
+                </a>
+
+                <span class="form-label">
+                    CREATE ACCOUNT
+                </span>
+
+                <h2>Join Aagaaz</h2>
+
+                <p class="auth-subtitle">
+                    Start predicting, participating and
+                    creating measurable impact.
+                </p>
+
+
+                <form id="registerForm" class="auth-form">
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            minlength="2"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="name@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                placeholder="Minimum 6 characters"
+                                autocomplete="new-password"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-password-target="registerPassword"
+                                aria-label="Show or hide password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Enter password again"
+                                autocomplete="new-password"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-password-target="confirmPassword"
+                                aria-label="Show or hide password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <label class="terms-row">
+
+                        <input
+                            type="checkbox"
+                            id="termsAccepted"
+                            required
+                        >
+
+                        <span>
+                            I agree to participate responsibly
+                            and submit genuine cleanup evidence.
+                        </span>
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit-button"
+                        id="registerButton"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <p
+                    id="registerMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></p>
+
+
+                <p class="auth-switch">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </p>
+
+
+                <a class="back-home" href="../index.html">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+
+<script src="../js/register.js"></script>
+
+</body>
+</html>

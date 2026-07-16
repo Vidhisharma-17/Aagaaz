@@ -1,0 +1,449 @@
+.info-page {
+    width: min(1400px, 92%);
+    margin: auto;
+    padding: 70px 0 100px;
+}
+
+
+.info-hero {
+    min-height: 530px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: clamp(35px, 7vw, 90px);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(2, 44, 40, 0.98),
+            rgba(15, 118, 110, 0.90)
+        );
+
+    color: white;
+}
+
+
+.info-hero .page-eyebrow {
+    color: #99f6e4;
+}
+
+
+.info-hero h1 {
+    max-width: 950px;
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(3rem, 7vw, 6.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.06em;
+}
+
+
+.info-hero > p {
+    max-width: 800px;
+
+    margin-top: 25px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 1.05rem;
+}
+
+
+.info-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.info-primary-button,
+.info-secondary-button {
+    min-height: 50px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+
+    border-radius: 11px;
+
+    font-weight: 850;
+}
+
+
+.info-primary-button {
+    background: var(--primary);
+    color: white;
+}
+
+
+.info-hero .info-primary-button {
+    background: white;
+    color: var(--primary-dark);
+}
+
+
+.info-secondary-button {
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.3);
+
+    color: white;
+}
+
+
+.info-section {
+    padding: 90px 0 10px;
+}
+
+
+.info-section-heading {
+    max-width: 850px;
+
+    margin-bottom: 35px;
+}
+
+
+.info-section-heading h2 {
+    margin-top: 8px;
+
+    color: var(--dark);
+
+    font-size:
+        clamp(2.1rem, 4vw, 3.8rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+}
+
+
+.problem-grid,
+.models-grid,
+.impact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.info-card,
+.model-info-card,
+.impact-grid article {
+    min-height: 280px;
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 12px 40px
+        rgba(15, 118, 110, 0.05);
+}
+
+
+.info-card-number {
+    color: var(--primary);
+
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+
+
+.info-card h3,
+.model-info-card h3,
+.impact-grid h3 {
+    margin-top: 35px;
+
+    color: var(--dark);
+
+    font-size: 1.45rem;
+}
+
+
+.info-card p,
+.model-info-card p,
+.impact-grid p {
+    margin-top: 12px;
+
+    color: var(--muted);
+}
+
+
+.solution-section {
+    margin-top: 80px;
+
+    padding: 70px;
+
+    border-radius: 25px;
+
+    background: var(--dark);
+}
+
+
+.solution-section
+.info-section-heading h2 {
+    color: white;
+}
+
+
+.solution-flow {
+    display: grid;
+
+    gap: 1px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+.solution-flow article {
+    display: grid;
+
+    grid-template-columns: 60px 1fr;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.solution-flow article > span {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(153, 246, 228, 0.15);
+
+    color: #99f6e4;
+
+    font-weight: 900;
+}
+
+
+.solution-flow h3 {
+    color: white;
+}
+
+
+.solution-flow p {
+    margin-top: 6px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+}
+
+
+.model-type {
+    width: fit-content;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: var(--primary-light);
+    color: var(--primary-dark);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+
+.model-info-card strong {
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--primary-dark);
+}
+
+
+.impact-grid article > span {
+    color: var(--primary);
+
+    font-size: 0.75rem;
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.info-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-top: 100px;
+
+    padding: 50px;
+
+    border-radius: 22px;
+
+    background: #ecfdf5;
+}
+
+
+.info-cta h2 {
+    max-width: 800px;
+
+    margin-top: 7px;
+
+    color: var(--dark);
+
+    font-size:
+        clamp(2rem, 4vw, 3.5rem);
+
+    line-height: 1.05;
+}
+
+
+@media (max-width: 950px) {
+
+    .problem-grid,
+    .models-grid,
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .solution-section {
+        padding: 40px;
+    }
+
+
+    .info-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .info-page {
+        padding-top: 30px;
+    }
+
+
+    .info-hero {
+        min-height: 480px;
+
+        padding: 30px;
+    }
+
+
+    .info-section {
+        padding-top: 65px;
+    }
+
+
+    .solution-section {
+        margin-top: 50px;
+
+        padding: 25px;
+    }
+
+
+    .solution-flow article {
+        grid-template-columns: 1fr;
+    }
+
+
+    .info-cta {
+        margin-top: 65px;
+
+        padding: 30px;
+    }
+}
+
+/* ============================================================
+   EXPECTED IMPACT - LAYOUT FIX
+============================================================ */
+
+.info-section.impact-section {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    padding: 90px 0 10px;
+    background: transparent;
+}
+
+.impact-section .info-section-heading {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 0 35px 0;
+}
+
+.impact-section .impact-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.impact-section .impact-grid article {
+    width: auto;
+    min-width: 0;
+    min-height: 280px;
+    margin: 0;
+}
+
+@media (max-width: 950px) {
+    .impact-section .impact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==========================================================
+   INFO PAGE - SIDEBAR LAYOUT FIX
+========================================================== */
+
+.info-page {
+    grid-column: 2;
+    width: 100%;
+    min-width: 0;
+    padding: 48px clamp(30px, 5vw, 75px) 100px;
+}
+
+@media (max-width: 820px) {
+
+    .info-page {
+        grid-column: 1;
+        padding: 32px 20px 70px;
+    }
+}

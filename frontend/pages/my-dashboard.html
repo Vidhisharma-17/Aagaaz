@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Dashboard | Aagaaz</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prediction.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+
+<body class="app-body">
+
+    <!-- =====================================================
+         COMPLETE APP LAYOUT
+    ====================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="eco-sidebar">
+
+            <!-- BRAND -->
+
+            <a href="../index.html" class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    ♻
+                </div>
+
+                <div>
+                    <strong>Aagaaz</strong>
+                    <span>SMART WASTE INTELLIGENCE</span>
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <p class="sidebar-section-label">
+                WORKSPACE
+            </p>
+
+
+            <nav class="sidebar-navigation">
+
+                <a
+                    href="new-prediction.html"
+                    class="sidebar-link"
+                >
+                    <span class="nav-icon">✦</span>
+
+                    <div>
+                        <strong>New Prediction</strong>
+                        <small>Generate AI forecast</small>
+                    </div>
+                </a>
+
+
+                <a
+                    href="jobs.html"
+                    class="sidebar-link"
+                >
+                    <span class="nav-icon">♻</span>
+
+                    <div>
+                        <strong>Cleanup Jobs</strong>
+                        <small>Explore opportunities</small>
+                    </div>
+                </a>
+
+
+                <a
+                    href="my-dashboard.html"
+                    class="sidebar-link active"
+                >
+                    <span class="nav-icon">▦</span>
+
+                    <div>
+                        <strong>My Dashboard</strong>
+                        <small>Track your activity</small>
+                    </div>
+                </a>
+
+
+                <a
+                    href="info.html"
+                    class="sidebar-link"
+                >
+                    <span class="nav-icon">i</span>
+
+                    <div>
+                        <strong>About Platform</strong>
+                        <small>Learn how it works</small>
+                    </div>
+                </a>
+
+            </nav>
+
+
+            <!-- IMPACT CARD -->
+
+            <div class="sidebar-impact-card">
+
+                <span class="impact-card-icon">
+                    🌱
+                </span>
+
+                <strong>
+                    Your Impact Matters
+                </strong>
+
+                <p>
+                    Track every prediction, cleanup activity
+                    and environmental contribution you make
+                    through Aagaaz.
+                </p>
+
+            </div>
+
+
+            <!-- LOGGED-IN USER -->
+
+            <div class="sidebar-user">
+
+                <div class="sidebar-avatar">
+                    <span id="sidebarUserInitial">
+                        U
+                    </span>
+                </div>
+
+
+                <div class="sidebar-user-details">
+
+                    <strong id="navbarUserName">
+                        Aagaaz User
+                    </strong>
+
+                    <span id="navbarUserEmail"></span>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="sidebar-logout"
+                    type="button"
+                    title="Logout"
+                >
+                    ↪
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             DASHBOARD MAIN CONTENT
+        ================================================== -->
+
+        <main class="dashboard-page">
+
+
+            <!-- =============================================
+                 DASHBOARD HEADER
+            ============================================== -->
+
+            <section class="dashboard-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        PERSONAL IMPACT CENTER
+                    </span>
+
+                    <h1 id="dashboardWelcome">
+                        My Dashboard
+                    </h1>
+
+                    <p>
+                        Track your AI predictions, cleanup
+                        assignments, completed work, rewards
+                        and environmental contribution.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="refreshDashboardButton"
+                    class="refresh-button"
+                >
+                    Refresh Dashboard
+                </button>
+
+            </section>
+
+
+            <!-- DASHBOARD MESSAGE -->
+
+            <p
+                id="dashboardMessage"
+                class="dashboard-message"
+                aria-live="polite"
+            ></p>
+
+
+            <!-- =============================================
+                 DASHBOARD STATISTICS
+            ============================================== -->
+
+            <section class="dashboard-stats">
+
+
+                <!-- TOTAL PREDICTIONS -->
+
+                <article class="dashboard-stat-card">
+
+                    <span>
+                        Total Predictions
+                    </span>
+
+                    <strong id="totalPredictions">
+                        0
+                    </strong>
+
+                    <p>
+                        AI waste predictions created.
+                    </p>
+
+                </article>
+
+
+                <!-- ACCEPTED JOBS -->
+
+                <article class="dashboard-stat-card">
+
+                    <span>
+                        Accepted Jobs
+                    </span>
+
+                    <strong id="acceptedJobs">
+                        0
+                    </strong>
+
+                    <p>
+                        Cleanup opportunities accepted.
+                    </p>
+
+                </article>
+
+
+                <!-- COMPLETED JOBS -->
+
+                <article class="dashboard-stat-card">
+
+                    <span>
+                        Completed Jobs
+                    </span>
+
+                    <strong id="completedJobs">
+                        0
+                    </strong>
+
+                    <p>
+                        Cleanup tasks successfully completed.
+                    </p>
+
+                </article>
+
+
+                <!-- TOTAL REWARDS -->
+
+                <article class="dashboard-stat-card">
+
+                    <span>
+                        Total Rewards
+                    </span>
+
+                    <strong id="totalRewards">
+                        ₹0
+                    </strong>
+
+                    <p>
+                        Rewards earned through cleanup work.
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- =============================================
+                 MAIN DASHBOARD GRID
+            ============================================== -->
+
+            <section class="dashboard-layout">
+
+
+                <!-- LEFT COLUMN -->
+
+                <div class="dashboard-main-column">
+
+
+                    <!-- CLEANUP ACTIVITY -->
+
+                    <section class="dashboard-panel">
+
+                        <div class="dashboard-panel-heading">
+
+                            <div>
+
+                                <span class="page-eyebrow">
+                                    WORK HISTORY
+                                </span>
+
+                                <h2>
+                                    Cleanup Activity
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="jobs.html"
+                                class="dashboard-panel-link"
+                            >
+                                Browse Jobs
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            id="workHistoryContainer"
+                            class="work-history-container"
+                        >
+
+                            <p class="dashboard-empty-state">
+                                Loading cleanup activity...
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- RECENT PREDICTIONS -->
+
+                    <section class="dashboard-panel">
+
+                        <div class="dashboard-panel-heading">
+
+                            <div>
+
+                                <span class="page-eyebrow">
+                                    AI ACTIVITY
+                                </span>
+
+                                <h2>
+                                    Recent Predictions
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="new-prediction.html"
+                                class="dashboard-panel-link"
+                            >
+                                New Prediction
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            id="dashboardPredictionsContainer"
+                            class="dashboard-predictions-container"
+                        >
+
+                            <p class="dashboard-empty-state">
+                                Loading predictions...
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =========================================
+                     RIGHT DASHBOARD SIDEBAR
+                ========================================== -->
+
+                <aside class="dashboard-sidebar">
+
+
+                    <!-- PROFILE CARD -->
+
+                    <article class="profile-card">
+
+                        <span class="card-label">
+                            USER PROFILE
+                        </span>
+
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar"
+                        >
+                            U
+                        </div>
+
+
+                        <h2 id="profileName">
+                            Aagaaz User
+                        </h2>
+
+
+                        <p id="profileEmail">
+                            --
+                        </p>
+
+
+                        <div class="profile-information">
+
+                            <div>
+
+                                <span>
+                                    User ID
+                                </span>
+
+                                <strong id="profileUserId">
+                                    --
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Member Since
+                                </span>
+
+                                <strong id="profileCreatedAt">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ENVIRONMENTAL IMPACT -->
+
+                    <article class="impact-card">
+
+                        <span class="card-label">
+                            YOUR ENVIRONMENTAL IMPACT
+                        </span>
+
+
+                        <div class="impact-metric">
+
+                            <strong id="totalWasteHandled">
+                                0 tons
+                            </strong>
+
+                            <span>
+                                Estimated waste handled
+                            </span>
+
+                        </div>
+
+
+                        <div class="impact-metric">
+
+                            <strong id="totalSubmissions">
+                                0
+                            </strong>
+
+                            <span>
+                                Cleanup evidence submissions
+                            </span>
+
+                        </div>
+
+
+                        <div class="impact-metric">
+
+                            <strong id="totalCertificates">
+                                0
+                            </strong>
+
+                            <span>
+                                Certificates generated
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </aside>
+
+            </section>
+
+
+            <!-- =============================================
+                 CERTIFICATES
+            ============================================== -->
+
+            <section class="dashboard-panel certificates-panel">
+
+                <div class="dashboard-panel-heading">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            ACHIEVEMENTS
+                        </span>
+
+                        <h2>
+                            My Certificates
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="certificatesContainer"
+                    class="certificates-container"
+                >
+
+                    <p class="dashboard-empty-state">
+                        Loading certificates...
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

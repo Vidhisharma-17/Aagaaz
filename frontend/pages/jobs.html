@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cleanup Jobs | Aagaaz</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prediction.css">
+    <link rel="stylesheet" href="../css/jobs.css">
+</head>
+
+<body class="app-body">
+
+    <!-- =====================================================
+         APP LAYOUT
+    ====================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="eco-sidebar">
+
+            <a href="../index.html" class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    ♻
+                </div>
+
+                <div>
+                    <strong>Aagaaz</strong>
+                    <span>SMART WASTE INTELLIGENCE</span>
+                </div>
+
+            </a>
+
+
+            <p class="sidebar-section-label">
+                WORKSPACE
+            </p>
+
+
+            <nav class="sidebar-navigation">
+
+                <a
+                    href="new-prediction.html"
+                    class="sidebar-link"
+                >
+                    <span class="nav-icon">✦</span>
+
+                    <div>
+                        <strong>New Prediction</strong>
+                        <small>Generate AI forecast</small>
+                    </div>
+                </a>
+
+
+                <a
+                    href="jobs.html"
+                    class="sidebar-link active"
+                >
+                    <span class="nav-icon">♻</span>
+
+                    <div>
+                        <strong>Cleanup Jobs</strong>
+                        <small>Explore opportunities</small>
+                    </div>
+                </a>
+
+
+                <a
+                    href="my-dashboard.html"
+                    class="sidebar-link"
+                >
+                    <span class="nav-icon">▦</span>
+
+                    <div>
+                        <strong>My Dashboard</strong>
+                        <small>Track your activity</small>
+                    </div>
+                </a>
+
+
+                <a
+                    href="info.html"
+                    class="sidebar-link"
+                >
+                    <span class="nav-icon">i</span>
+
+                    <div>
+                        <strong>About Platform</strong>
+                        <small>Learn how it works</small>
+                    </div>
+                </a>
+
+            </nav>
+
+
+            <!-- IMPACT CARD -->
+
+            <div class="sidebar-impact-card">
+
+                <span class="impact-card-icon">
+                    🌱
+                </span>
+
+                <strong>
+                    Creating Local Impact
+                </strong>
+
+                <p>
+                    Every cleanup opportunity connects
+                    environmental intelligence with
+                    community action.
+                </p>
+
+            </div>
+
+
+            <!-- USER PROFILE -->
+
+            <div class="sidebar-user">
+
+                <div class="sidebar-avatar">
+                    <span id="sidebarUserInitial">
+                        U
+                    </span>
+                </div>
+
+
+                <div class="sidebar-user-details">
+
+                    <strong id="navbarUserName">
+                        Aagaaz User
+                    </strong>
+
+                    <span id="navbarUserEmail"></span>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="sidebar-logout"
+                    type="button"
+                    title="Logout"
+                >
+                    ↪
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN JOBS CONTENT
+        ================================================== -->
+
+        <main class="jobs-page">
+
+
+            <!-- JOBS HERO -->
+
+            <section class="jobs-hero">
+
+                <div class="jobs-hero-content">
+
+                    <span class="page-eyebrow">
+                        GREEN EMPLOYMENT
+                    </span>
+
+                    <h1>
+                        Cleanup Opportunities
+                    </h1>
+
+                    <p>
+                        Find cleanup work based on predicted
+                        waste generation and workforce demand.
+                        Apply for available opportunities and
+                        contribute to cleaner public spaces.
+                    </p>
+
+                </div>
+
+
+                <article class="jobs-summary-card">
+
+                    <span>
+                        Available Jobs
+                    </span>
+
+                    <strong id="availableJobsCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Currently open opportunities
+                    </small>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 JOB TABS
+            ================================================== -->
+
+            <section class="jobs-tabs">
+
+                <button
+                    type="button"
+                    class="jobs-tab active"
+                    data-tab="available"
+                >
+                    Available Jobs
+                </button>
+
+
+                <button
+                    type="button"
+                    class="jobs-tab"
+                    data-tab="accepted"
+                >
+                    My Accepted Jobs
+                </button>
+
+            </section>
+
+
+            <!-- STATUS MESSAGE -->
+
+            <p
+                id="jobsMessage"
+                class="jobs-message"
+                aria-live="polite"
+            ></p>
+
+
+            <!-- =================================================
+                 AVAILABLE JOBS
+            ================================================== -->
+
+            <section
+                id="availableJobsSection"
+                class="jobs-section"
+            >
+
+                <div class="jobs-section-heading">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            OPEN OPPORTUNITIES
+                        </span>
+
+                        <h2>
+                            Available Cleanup Jobs
+                        </h2>
+
+                        <p>
+                            Choose an opportunity that matches
+                            your location and availability.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="refreshJobsButton"
+                        class="refresh-button"
+                    >
+                        Refresh Jobs
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="availableJobsContainer"
+                    class="jobs-grid"
+                >
+
+                    <p class="jobs-empty-state">
+                        Loading available cleanup jobs...
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCEPTED JOBS
+            ================================================== -->
+
+            <section
+                id="acceptedJobsSection"
+                class="jobs-section"
+                hidden
+            >
+
+                <div class="jobs-section-heading">
+
+                    <div>
+
+                        <span class="page-eyebrow">
+                            MY WORK
+                        </span>
+
+                        <h2>
+                            My Accepted Cleanup Jobs
+                        </h2>
+
+                        <p>
+                            Track your accepted cleanup
+                            opportunities and submission deadlines.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="acceptedJobsContainer"
+                    class="accepted-jobs-container"
+                >
+
+                    <p class="jobs-empty-state">
+                        Loading your accepted jobs...
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         JOB DETAILS MODAL
+    ====================================================== -->
+
+    <div
+        id="jobModal"
+        class="job-modal"
+        hidden
+    >
+
+        <div
+            class="job-modal-overlay"
+            data-close-modal
+        ></div>
+
+
+        <article class="job-modal-card">
+
+            <button
+                type="button"
+                class="modal-close-button"
+                data-close-modal
+                aria-label="Close job details"
+            >
+                ×
+            </button>
+
+
+            <span class="page-eyebrow">
+                CLEANUP OPPORTUNITY
+            </span>
+
+
+            <h2 id="modalEventName">
+                Cleanup Job
+            </h2>
+
+
+            <p
+                id="modalLocation"
+                class="modal-location"
+            >
+            </p>
+
+
+            <!-- JOB DETAILS -->
+
+            <div class="modal-details-grid">
+
+                <article>
+
+                    <span>
+                        Predicted Waste
+                    </span>
+
+                    <strong id="modalWaste">
+                        --
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Pollution Risk
+                    </span>
+
+                    <strong id="modalRisk">
+                        --
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Workers Needed
+                    </span>
+
+                    <strong id="modalWorkers">
+                        --
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Reward
+                    </span>
+
+                    <strong id="modalReward">
+                        --
+                    </strong>
+
+                </article>
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="modal-address">
+
+                <span>
+                    Cleanup Location
+                </span>
+
+                <strong id="modalAddress">
+                    --
+                </strong>
+
+            </div>
+
+
+            <!-- DEADLINE -->
+
+            <p
+                id="modalDeadline"
+                class="modal-deadline"
+            >
+            </p>
+
+
+            <!-- ACCEPT BUTTON -->
+
+            <button
+                type="button"
+                id="modalAcceptButton"
+                class="accept-job-button"
+            >
+                Apply for Cleanup Job
+            </button>
+
+        </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/jobs.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Waste Forecast | Aagaaz</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prediction.css">
+</head>
+
+<body class="app-body">
+
+<div class="app-shell">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="eco-sidebar">
+
+        <a href="../index.html" class="sidebar-brand">
+            <div class="sidebar-logo">♻</div>
+
+            <div>
+                <strong>Aagaaz</strong>
+                <span>Smart Waste Intelligence</span>
+            </div>
+        </a>
+
+
+        <div class="sidebar-section-label">
+            WORKSPACE
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+            <a
+                href="new-prediction.html"
+                class="sidebar-link active"
+            >
+                <span class="nav-icon">✦</span>
+
+                <div>
+                    <strong>New Prediction</strong>
+                    <small>Run AI analysis</small>
+                </div>
+            </a>
+
+
+            <a
+                href="jobs.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">⌖</span>
+
+                <div>
+                    <strong>Cleanup Jobs</strong>
+                    <small>Find opportunities</small>
+                </div>
+            </a>
+
+
+            <a
+                href="my-dashboard.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">▦</span>
+
+                <div>
+                    <strong>My Dashboard</strong>
+                    <small>Track your impact</small>
+                </div>
+            </a>
+
+
+            <a
+                href="info.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">i</span>
+
+                <div>
+                    <strong>About Project</strong>
+                    <small>How Aagaaz works</small>
+                </div>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-impact-card">
+
+            <span class="impact-card-icon">🌱</span>
+
+            <div>
+                <strong>Predict. Prepare. Protect.</strong>
+
+                <p>
+                    Using AI to support cleaner and
+                    better-managed public spaces.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-user">
+
+            <div class="sidebar-avatar">
+                E
+            </div>
+
+            <div class="sidebar-user-details">
+
+                <strong id="navbarUserName">
+                    Aagaaz User
+                </strong>
+
+                <span id="navbarUserEmail"></span>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="sidebar-logout"
+                title="Logout"
+            >
+                ↗
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="prediction-page">
+
+
+        <!-- ================= TOP HEADER ================= -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <span class="dashboard-breadcrumb">
+                    AI WORKSPACE / WASTE FORECAST
+                </span>
+
+                <h1>
+                    Plan before the waste arrives.
+                </h1>
+
+                <p>
+                    Turn expected event conditions into
+                    actionable cleanup intelligence.
+                </p>
+
+            </div>
+
+
+            <div class="engine-status">
+
+                <span class="engine-status-dot"></span>
+
+                <div>
+                    <small>AI ENGINE</small>
+                    <strong>Models Online</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= WORKSPACE ================= -->
+
+        <section class="prediction-command-center">
+
+
+            <!-- LEFT INFORMATION PANEL -->
+
+            <aside class="prediction-context-panel">
+
+                <span class="context-number">
+                    01
+                </span>
+
+                <span class="context-eyebrow">
+                    BUILD FORECAST
+                </span>
+
+                <h2>
+                    Tell the AI what to expect.
+                </h2>
+
+                <p>
+                    Select the event conditions and provide
+                    a crowd estimate. Aagaaz will analyse
+                    the expected environmental impact.
+                </p>
+
+
+                <div class="forecast-output-list">
+
+                    <div>
+                        <span>01</span>
+
+                        <section>
+                            <strong>Waste Forecast</strong>
+                            <small>Estimated total waste</small>
+                        </section>
+                    </div>
+
+
+                    <div>
+                        <span>02</span>
+
+                        <section>
+                            <strong>Pollution Risk</strong>
+                            <small>Environmental risk level</small>
+                        </section>
+                    </div>
+
+
+                    <div>
+                        <span>03</span>
+
+                        <section>
+                            <strong>Workforce Plan</strong>
+                            <small>Cleanup workers required</small>
+                        </section>
+                    </div>
+
+                </div>
+
+
+                <div class="context-tip">
+
+                    <span>TIP</span>
+
+                    <p>
+                        Use realistic expected crowd values
+                        for more meaningful predictions.
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ================= FORM ================= -->
+
+            <form
+                id="predictionForm"
+                class="prediction-form-card"
+            >
+
+
+                <div class="form-header">
+
+                    <div>
+
+                        <span class="form-step">
+                            STEP 01
+                        </span>
+
+                        <h2>
+                            Event Configuration
+                        </h2>
+
+                        <p>
+                            Define where and when the
+                            cleanup demand is expected.
+                        </p>
+
+                    </div>
+
+                    <span class="form-status">
+                        REQUIRED
+                    </span>
+
+                </div>
+
+
+                <div class="prediction-form-grid">
+
+
+                    <div class="prediction-field">
+
+                        <label for="event">
+                            Event
+                        </label>
+
+                        <select
+                            id="event"
+                            required
+                        >
+                            <option value="">
+                                Loading events...
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="prediction-field">
+
+                        <label for="location">
+                            Location
+                        </label>
+
+                        <select
+                            id="location"
+                            required
+                        >
+                            <option value="">
+                                Loading locations...
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="prediction-field">
+
+                        <label for="season">
+                            Season
+                        </label>
+
+                        <select
+                            id="season"
+                            required
+                        >
+                            <option value="">
+                                Loading seasons...
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="prediction-field">
+
+                        <label for="dayType">
+                            Crowd Pattern
+                        </label>
+
+                        <select
+                            id="dayType"
+                            required
+                        >
+                            <option value="">
+                                Loading day types...
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-separator">
+
+                    <span></span>
+
+                    <strong>
+                        CROWD CONDITIONS
+                    </strong>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="prediction-form-grid">
+
+
+                    <div class="prediction-field">
+
+                        <label for="crowd">
+                            Expected Crowd
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="crowd"
+                                min="0.01"
+                                step="0.01"
+                                placeholder="5"
+                                required
+                            >
+
+                            <span>
+                                LAKH
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Estimated number of visitors.
+                        </small>
+
+                    </div>
+
+
+                    <div class="prediction-field">
+
+                        <label for="temperature">
+                            Expected Temperature
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="temperature"
+                                step="0.1"
+                                placeholder="30"
+                                required
+                            >
+
+                            <span>
+                                °C
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Expected temperature during the event.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="predictionMessage"
+                    class="prediction-message"
+                    aria-live="polite"
+                ></p>
+
+
+                <div class="prediction-submit-area">
+
+                    <div>
+
+                        <span class="submit-icon">
+                            ✦
+                        </span>
+
+                        <section>
+                            <strong>
+                                Ready for analysis
+                            </strong>
+
+                            <small>
+                                Results are generated using
+                                trained ML models.
+                            </small>
+                        </section>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="predictionButton"
+                        class="prediction-submit-button"
+                    >
+                        Run AI Forecast
+
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section
+            id="predictionResult"
+            class="result-section"
+            hidden
+        >
+
+
+            <div class="result-heading">
+
+                <div>
+
+                    <span class="result-complete-badge">
+                        ✓ ANALYSIS COMPLETE
+                    </span>
+
+                    <h2>
+                        Your Waste Intelligence Report
+                    </h2>
+
+                    <p>
+                        AI-generated operational forecast based
+                        on the conditions you provided.
+                    </p>
+
+                </div>
+
+
+                <span
+                    id="predictionTimestamp"
+                    class="result-timestamp"
+                ></span>
+
+            </div>
+
+
+            <div class="result-grid">
+
+
+                <article class="result-card waste-result">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            01
+                        </span>
+
+                        <small>
+                            WASTE FORECAST
+                        </small>
+
+                    </div>
+
+
+                    <strong
+                        id="predictedWaste"
+                        class="result-value"
+                    >
+                        --
+                    </strong>
+
+
+                    <p>
+                        Estimated total waste expected
+                        from this event.
+                    </p>
+
+                </article>
+
+
+                <article class="result-card risk-result">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            02
+                        </span>
+
+                        <small>
+                            ENVIRONMENTAL RISK
+                        </small>
+
+                    </div>
+
+
+                    <strong
+                        id="pollutionRisk"
+                        class="result-value"
+                    >
+                        --
+                    </strong>
+
+
+                    <p>
+                        Predicted environmental
+                        pollution risk category.
+                    </p>
+
+                </article>
+
+
+                <article class="result-card workers-result">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            03
+                        </span>
+
+                        <small>
+                            WORKFORCE PLAN
+                        </small>
+
+                    </div>
+
+
+                    <strong
+                        id="workersRequired"
+                        class="result-value"
+                    >
+                        --
+                    </strong>
+
+
+                    <p>
+                        Estimated sanitation workforce
+                        required for cleanup operations.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <!-- RECOMMENDATIONS -->
+
+            <article class="recommendation-card">
+
+
+                <div class="recommendation-heading">
+
+                    <span class="recommendation-icon">
+                        ✦
+                    </span>
+
+                    <div>
+
+                        <span class="card-label">
+                            AI ACTION PLAN
+                        </span>
+
+                        <h3>
+                            Recommended Next Steps
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <ul id="recommendations"></ul>
+
+
+            </article>
+
+
+            <div class="result-actions">
+
+
+                <button
+                    type="button"
+                    id="newPredictionButton"
+                    class="secondary-action-button"
+                >
+                    Start New Forecast
+                </button>
+
+
+                <a
+                    href="jobs.html"
+                    class="primary-action-button"
+                >
+                    Explore Cleanup Jobs
+
+                    <span>→</span>
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HISTORY ================= -->
+
+        <section class="history-section">
+
+
+            <div class="history-heading">
+
+                <div>
+
+                    <span class="history-eyebrow">
+                        YOUR ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Forecasts
+                    </h2>
+
+                    <p>
+                        Review predictions generated
+                        from your account.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="refreshHistoryButton"
+                    class="refresh-button"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div
+                id="historyContainer"
+                class="history-container"
+            >
+
+                <p class="empty-state">
+                    Loading your recent forecasts...
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/prediction.js"></script>
+
+</body>
+
+</html>

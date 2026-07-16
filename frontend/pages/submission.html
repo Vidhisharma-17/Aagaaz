@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Cleanup Work | Aagaaz</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prediction.css">
+    <link rel="stylesheet" href="../css/submission.css">
+</head>
+
+<body class="app-body">
+
+<header class="app-navbar">
+
+    <a href="../index.html" class="app-brand">
+        <span class="brand-icon">♻</span>
+        <span>Aagaaz</span>
+    </a>
+
+    <nav class="app-nav-links">
+        <a href="new-prediction.html">New Prediction</a>
+        <a href="jobs.html" class="active">Jobs</a>
+        <a href="my-dashboard.html">My Dashboard</a>
+        <a href="info.html">Info</a>
+    </nav>
+
+    <div class="user-menu">
+
+        <div>
+            <strong id="navbarUserName">
+                Aagaaz User
+            </strong>
+
+            <span id="navbarUserEmail"></span>
+        </div>
+
+        <button id="logoutButton" class="logout-button">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="submission-page">
+
+    <section class="submission-heading">
+
+        <div>
+            <span class="page-eyebrow">
+                CLEANUP EVIDENCE
+            </span>
+
+            <h1>Submit Your Cleanup Work</h1>
+
+            <p>
+                Upload genuine cleanup evidence before the
+                submission deadline. Your completed work will
+                be recorded in your Aagaaz dashboard.
+            </p>
+        </div>
+
+        <a href="jobs.html" class="back-jobs-button">
+            ← Back to Jobs
+        </a>
+
+    </section>
+
+
+    <section class="submission-layout">
+
+        <div class="submission-main-card">
+
+            <div class="submission-step">
+
+                <span>01</span>
+
+                <div>
+                    <h2>Accepted Job</h2>
+
+                    <p>
+                        Review the cleanup assignment before
+                        uploading your evidence.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <article id="jobInformation" class="submission-job-card">
+
+                <div class="submission-loading">
+                    Loading accepted job information...
+                </div>
+
+            </article>
+
+
+            <div class="submission-divider"></div>
+
+
+            <div class="submission-step">
+
+                <span>02</span>
+
+                <div>
+                    <h2>Upload Cleanup Evidence</h2>
+
+                    <p>
+                        Select a clear image showing the cleanup
+                        work completed at the assigned location.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="submissionForm">
+
+                <label
+                    for="cleanupImage"
+                    id="uploadArea"
+                    class="upload-area"
+                >
+
+                    <div class="upload-icon">📷</div>
+
+                    <strong>
+                        Select Cleanup Image
+                    </strong>
+
+                    <p>
+                        Click to choose JPG, JPEG, PNG or WEBP.
+                    </p>
+
+                    <small>
+                        Maximum recommended size: 10 MB
+                    </small>
+
+                </label>
+
+
+                <input
+                    type="file"
+                    id="cleanupImage"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                    required
+                >
+
+
+                <div
+                    id="imagePreviewContainer"
+                    class="image-preview-container"
+                    hidden
+                >
+
+                    <img
+                        id="imagePreview"
+                        alt="Cleanup evidence preview"
+                    >
+
+                    <div class="preview-information">
+
+                        <strong id="selectedFileName"></strong>
+
+                        <span id="selectedFileSize"></span>
+
+                        <button
+                            type="button"
+                            id="removeImageButton"
+                        >
+                            Remove Image
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="submissionMessage"
+                    class="submission-message"
+                    aria-live="polite"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    id="submitEvidenceButton"
+                    class="submit-evidence-button"
+                >
+                    Submit Cleanup Evidence
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <aside class="submission-sidebar">
+
+            <article class="deadline-card">
+
+                <span class="card-label">
+                    SUBMISSION DEADLINE
+                </span>
+
+                <strong id="deadlineCountdown">
+                    Loading...
+                </strong>
+
+                <p id="deadlineDate">
+                    --
+                </p>
+
+            </article>
+
+
+            <article class="submission-guide-card">
+
+                <span class="card-label">
+                    EVIDENCE GUIDELINES
+                </span>
+
+                <ul>
+                    <li>
+                        Upload a clear cleanup work image.
+                    </li>
+
+                    <li>
+                        Submit evidence for the assigned job only.
+                    </li>
+
+                    <li>
+                        Complete submission before the deadline.
+                    </li>
+
+                    <li>
+                        Avoid duplicate or unrelated images.
+                    </li>
+                </ul>
+
+            </article>
+
+
+            <article class="reward-card">
+
+                <span class="card-label">
+                    EXPECTED REWARD
+                </span>
+
+                <strong id="expectedReward">
+                    --
+                </strong>
+
+                <p>
+                    Reward is associated with successful
+                    cleanup completion.
+                </p>
+
+            </article>
+
+        </aside>
+
+    </section>
+
+
+    <section
+        id="submissionSuccess"
+        class="submission-success"
+        hidden
+    >
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <span class="page-eyebrow">
+            CLEANUP WORK SUBMITTED
+        </span>
+
+        <h2>Great work! Your evidence was submitted.</h2>
+
+        <p>
+            Your cleanup submission has been recorded.
+            You can now generate your Aagaaz certificate
+            and view your impact history.
+        </p>
+
+
+        <p
+            id="certificateMessage"
+            class="submission-message"
+        ></p>
+
+
+        <div class="success-actions">
+
+            <button
+                type="button"
+                id="generateCertificateButton"
+                class="generate-certificate-button"
+            >
+                Generate Certificate
+            </button>
+
+            <a
+                href="my-dashboard.html"
+                class="dashboard-link-button"
+            >
+                Open My Dashboard
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/auth.js"></script>
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+streamlit
+streamlit-option-menu
+streamlit-extras
+pandas
+numpy
+scikit-learn
+matplotlib
+plotly
+joblib
+openpyxl
+folium
+streamlit-folium
+xgboost
